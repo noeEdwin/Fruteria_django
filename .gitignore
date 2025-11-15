@@ -1,0 +1,29 @@
+# 1. Ignorar tu entorno virtual (el más importante)
+fruteria_entorno/
+
+# 2. Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 3. Entornos virtuales genéricos
+venv/
+env/
+.venv/
+
+# 4. Archivos de base de datos
+db.sqlite3
+*.sqlite3
+
+# 5. Archivos de secretos (¡IMPORTANTE!)
+.env
+*.env
+
+# 6. Carpetas de IDE
+.vscode/
+.idea/
+
+# 7. Archivos del sistema operativo
+.DS_Store
+Thumbs.db
