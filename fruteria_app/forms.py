@@ -24,7 +24,15 @@ class EmpleadoRegistrationForm(forms.Form):
         min_length=3,
         max_length=60
     )
-    turno = forms.CharField(label="Turno", required=False)
+    TURNO_CHOICES = [
+        ('Matutino', 'Matutino'),
+        ('Vespertino', 'Vespertino'),
+    ]
+    turno = forms.ChoiceField(
+        choices=TURNO_CHOICES,
+        label="Turno",
+        widget=forms.Select
+    )
     salario = forms.DecimalField(
         label="Salario", 
         required=False,

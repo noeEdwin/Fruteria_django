@@ -27,7 +27,11 @@ class Empleado(AbstractBaseUser, PermissionsMixin):
     
     id_e = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=60, blank=True, null=True)
-    turno = models.CharField(max_length=20, blank=True, null=True)
+    TURNO_CHOICES = [
+        ('Matutino', 'Matutino'),
+        ('Vespertino', 'Vespertino'),
+    ]
+    turno = models.CharField(max_length=20, choices=TURNO_CHOICES, blank=True, null=True)
     salario = models.DecimalField(max_digits=14, decimal_places=2, blank=True, null=True)
     username = models.CharField(max_length=150, unique=True)
     is_active = models.BooleanField(default=True)
