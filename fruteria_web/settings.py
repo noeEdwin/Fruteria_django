@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#Auth user model
+AUTH_USER_MODEL = 'fruteria_app.Empleado'
 
 # Application definition
 
@@ -80,7 +82,10 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '9474609',
         'HOST':'localhost',
-        'PORT' : '5432',            
+        'PORT' : '5432',
+        'OPTIONS': {
+            'options': '-c search_path=fruteria_db,public'
+        },            
     }
 }
 

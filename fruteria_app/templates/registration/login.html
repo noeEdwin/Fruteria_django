@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<br />
+<h2 class="text-center">Inicio de sesión</h2>
+<hr />
+<br />
+<div class="container">
+  <form class="form-group" method="POST">
+    {% csrf_token %}
+    <input
+      class="form-control"
+      type="text"
+      name="username"
+      placeholder="Nombre de usuario"
+      required
+    /><br />
+    <input
+      class="form-control"
+      type="password"
+      name="password"
+      placeholder="Contraseña"
+      required
+    /><br />
+    <button class="btn btn-success" type="submit">Login</button>
+  </form>
+</div>
+{% endblock %}
