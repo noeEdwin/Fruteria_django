@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 # --- 1. MANAGER PERSONALIZADO (PARA EL LOGIN) ---
-# Esto le dice a Django CÓMO crear usuarios usando tu modelo
 class EmpleadoManager(BaseUserManager):
     def create_user(self, username, password=None, nombre=None, id_e=None, turno=None, salario=None, **extra_fields):
         if not username or not password or not nombre or not id_e:
@@ -31,8 +30,6 @@ class Empleado(AbstractBaseUser, PermissionsMixin):
     turno = models.CharField(max_length=20, blank=True, null=True)
     salario = models.DecimalField(max_digits=14, decimal_places=2, blank=True, null=True)
     username = models.CharField(max_length=150, unique=True)
-    # password (ya está incluido en AbstractBaseUser)
-    # last_login (ya está incluido en AbstractBaseUser)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
